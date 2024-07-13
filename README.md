@@ -22,8 +22,8 @@ $ npm install
 ## Running the app
 
 ```bash
-# development
-$ npm run start
+# using docker compose
+$ docker compose up --build
 
 # watch mode
 $ npm run start:dev
