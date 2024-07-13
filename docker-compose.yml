@@ -1,6 +1,20 @@
 version: '3.9'
 
 services:
+  api:
+    container_name: api-with-drizzle
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - ${PORT}:${PORT}
+    depends_on:
+      - postgres
+    networks:
+      - api-with-drizzle-network
+    volumes:
+      - .:/app
+
   postgres:
     container_name: postgres-api-with-drizzle
     image: postgres:14-alpine
@@ -9,4 +23,9 @@ services:
     ports:
       - "5432:5432"
     env_file:
-      - docker.env
+      - .docker.env
+    networks:
+      - api-with-drizzle-network
+
+networks:
+ api-with-drizzle-network:
