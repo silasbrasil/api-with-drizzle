@@ -45,6 +45,17 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Genereate a migration
+
+```bash
+# generate sql
+npx drizzle-kit generate --name {MIGRATION NAME}
+
+# apply migration
+npx drizzle-kit migrate
+```
+
+
 ## Stay in touch
 
 - Author - [Silas Brasil](https://github.com/silasbrasil)

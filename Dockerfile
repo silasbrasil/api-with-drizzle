@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY package*.json /app
 
-RUN npm install --force
+RUN npm cache clean --force; npm install --force
 
 COPY . /app
 

@@ -1,9 +1,15 @@
 import { Controller, Get } from '@nestjs/common';
+import { DrizzleService } from './database/drizzle.service';
 
 @Controller()
 export class AppController {
+  constructor(private readonly drizzleService: DrizzleService) {}
+
   @Get()
-  getHello(): string {
-    return `Hello World on port ${process.env.PORT} ffrom Docker Compose`;
+  getHello(): Record<any, any> {
+    return {
+      status: "OK",
+      dbConnection: this.drizzleService.db
+    };
   }
 }
