@@ -8,8 +8,8 @@ export class AppController {
   @Get()
   getHello(): Record<any, any> {
     return {
-      status: "OK",
-      dbConnection: this.drizzleService.db
+      status: 'OK',
+      dbConnection: this.drizzleService.db,
     };
   }
 }

@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { DrizzleService } from './drizzle.service';
 import { Pool } from 'pg';
-import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ConfigModule } from '@nestjs/config';
 import { DB_CONNECTION_TOKEN } from './database.options';
 
 @Module({
